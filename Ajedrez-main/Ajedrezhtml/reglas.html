@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reglas del Ajedrez</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header, footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        nav {
+            background-color: #444;
+            color: white;
+            padding: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contenedor {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .contenido {
+            max-width: 1000px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .reglas, .reglas-avanzadas {
+            grid-column: span 2;
+        }
+
+        h2 {
+            color: #444;
+        }
+
+        .contenedor-imagen {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            grid-column: span 2;
+        }
+
+        .contenedor-imagen img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .contenedor-flex {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .item-flex {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .marco {
+            border: 2px solid #ccc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .marco div {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .marco div span {
+            display: inline-block;
+            width: 150px;
+            font-weight: bold;
+        }
+
+        @media (min-width: 768px) {
+            .contenido {
+                grid-template-columns: 2fr 1fr;
+            }
+
+            .reglas {
+                grid-column: 1 / 2;
+            }
+
+            .reglas-avanzadas {
+                grid-column: 2 / 3;
+            }
+
+            .contenedor-imagen {
+                grid-column: span 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Reglas del Ajedrez</h1>
+    </header>
+    <main class="contenedor">
+        <section class="contenido">
+            <article class="reglas">
+                <section class="seccion-reglas">
+                    <h2>Objetivo del Juego</h2>
+                    <div class="marco">
+                        <div>
+                            <span>Objetivo:</span> Dar jaque mate al rey del oponente.
+                        </div>
+                        <div>
+                            <span>Definición:</span> El rey está bajo ataque directo y no hay manera de evitar su captura.
+                        </div>
+                    </div>
+                </section>
+                <section class="seccion-reglas">
+                    <h2>Movimientos de las Piezas</h2>
+                    <div class="marco">
+                        <div>
+                            <span>Rey:</span> Se mueve una casilla en cualquier dirección.
+                        </div>
+                        <div>
+                            <span>Reina:</span> Se mueve en cualquier dirección tantas casillas como se desee.
+                        </div>
+                        <div>
+                            <span>Alfil:</span> Se mueve diagonalmente tantas casillas como se desee.
+                        </div>
+                        <div>
+                            <span>Caballo:</span> Se mueve en forma de "L".
+                        </div>
+                        <div>
+                            <span>Torre:</span> Se mueve horizontal o verticalmente tantas casillas como sea.
+                        </div>
+                        <div>
+                            <span>Peón:</span> Se mueve una casilla hacia adelante y captura en diagonal.
+                        </div>
+                    </div>
+                </section>
+                <section class="seccion-reglas">
+                    <h2>Movimientos Especiales</h2>
+                    <div class="marco">
+                        <div>
+                            <span>Enroque:</span> Movimiento especial del rey y una torre que implica mover <span></span> ambas piezas simultáneamente.
+                        </div>
+                        <div>
+                            <span>Captura al Paso:</span> Movimiento especial de los peones que permite capturar un peón<span></span> contrario que se ha movido dos casillas desde su posición inicial.
+                        </div>
+                        <div>
+                            <span>Promoción Peón:</span> Cuando un peón alcanza la fila más lejana desde su posición<span></span> inicial, puede ser promovido a cualquier otra pieza (excepto el<span></span> rey).
+                        </div>
+                    </div>
+                </section>
+                        <section class="seccion-reglas">
+                            <h2>Situaciones Especiales</h2>
+                            <div class="marco">
+                                <div>
+                                    <span>Jaque:</span> Cuando el rey está bajo amenaza directa de captura.
+                                </div>
+                                <div>
+                                    <span>Jaque Mate:</span> Cuando el rey está en jaque y no puede escapar.
+                                </div>
+                                <div>
+                                    <span>Tablas:</span> Situaciones en las que el juego termina en empate.
+                                </div>
+                            </div>
+                        </section>
+                    </article>
+                    <aside class="reglas-avanzadas contenedor-flex">
+                        <h2>Conceptos Avanzados</h2>
+                        <div class="item-flex">
+                            <h3>Aperturas</h3>
+                            <div class="marco">
+                                <p>Las aperturas son las primeras jugadas en una partida de ajedrez. Existen muchas aperturas conocidas que guían el desarrollo de las piezas y la estrategia inicial.</p>
+                            </div>
+                        </div>
+                        <div class="item-flex">
+                            <h3>Estrategia y Táctica</h3>
+                            <div class="marco">
+                                <p>La estrategia se refiere a los planes a largo plazo en una partida, mientras que la táctica implica movimientos concretos y secuencias para ganar material o dar jaque mate.</p>
+                            </div>
+                        </div>
+                        <div class="item-flex">
+                            <h3>Finales</h3>
+                            <div class="marco">
+                                <p>El final es la fase de la partida donde quedan pocas piezas en el tablero. Conocer los principios básicos de los finales es crucial para ganar partidas igualadas.</p>
+                            </div>
+                        </div>
+                    </aside>
+                    <aside class="contenedor-imagen">
+                        <img src="imagen6.PNG" alt="Tablero de ajedrez">
+                    </aside>
+                </section>
+            </main>
+        </body>
+        </html>
+        

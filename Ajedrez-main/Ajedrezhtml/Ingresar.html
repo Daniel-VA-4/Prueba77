@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Juego</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            color: white;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .form-group div {
+            margin-bottom: 10px;
+        }
+
+        button[type="submit"] {
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        main{
+            background-image:url(imagen3.PNG);
+            background-repeat: no-repeat;
+            width: 490px;
+        }
+    </style>
+    <script>
+        function actualizarOpciones() {
+            const jugador1Negras = document.getElementById('negras1').checked;
+            const jugador1Blancas = document.getElementById('blancas1').checked;
+
+            const negras2 = document.getElementById('negras2');
+            const blancas2 = document.getElementById('blancas2');
+
+            if (jugador1Negras) {
+                negras2.disabled = true;
+                blancas2.disabled = false;
+            } else if (jugador1Blancas) {
+                negras2.disabled = false;
+                blancas2.disabled = true;
+            } else {
+                negras2.disabled = false;
+                blancas2.disabled = false;
+            }
+
+            const jugador2Negras = document.getElementById('negras2').checked;
+            const jugador2Blancas = document.getElementById('blancas2').checked;
+
+            const negras1 = document.getElementById('negras1');
+            const blancas1 = document.getElementById('blancas1');
+
+            if (jugador2Negras) {
+                negras1.disabled = true;
+                blancas1.disabled = false;
+            } else if (jugador2Blancas) {
+                negras1.disabled = false;
+                blancas1.disabled = true;
+            } else {
+                negras1.disabled = false;
+                blancas1.disabled = false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Registro de Partida de Ajedrez</h1>
+    </header>
+    <main>
+        <form action="http://localhost/conexion.php" method="post">
+            <div class="form-group">
+                <label for="jugador1">Jugador 1:</label>
+                <input type="text" id="jugador1" name="jugador1" required>
+            </div>
+            <div class="form-group">
+                <label for="piezas1">Piezas Jugador 1:</label><br>
+                <div>
+                    <label for="negras1">Negras</label>
+                    <input type="radio" id="negras1" name="piezas1" value="negras" onclick="actualizarOpciones()" required>
+                    <label for="blancas1">Blancas</label>
+                    <input type="radio" id="blancas1" name="piezas1" value="blancas" onclick="actualizarOpciones()">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="jugador2">Jugador 2:</label>
+                <input type="text" id="jugador2" name="jugador2" required>
+            </div>
+            <div class="form-group">
+                <label for="piezas2">Piezas Jugador 2:</label><br>
+                <div>
+                    <label for="negras2">Negras</label>
+                    <input type="radio" id="negras2" name="piezas2" value="negras" onclick="actualizarOpciones()" required>
+                    <label for="blancas2">Blancas</label>
+                    <input type="radio" id="blancas2" name="piezas2" value="blancas" onclick="actualizarOpciones()">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="ganador">Ganador:</label>
+                <select id="ganador" name="ganador" required>
+                    <option value="" disabled selected>Selecciona el ganador</option>
+                    <option value="jugador1">Jugador 1</option>
+                    <option value="jugador2">Jugador 2</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit">Registrar</button>
+            </div>
+        </form>
+    </main>
+    
+</body>
+</html>

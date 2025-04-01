@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Introducción al Proyecto de Ajedrez</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-image: url('background.jpg');
+            background-size: cover;
+            color: #333;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #222;
+        }
+        .theme-change {
+            color: #555;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        blockquote {
+            font-style: italic;
+            margin: 20px;
+            padding: 10px;
+            background-color: #eee;
+            border-left: 5px solid #ccc;
+        }
+        abbr {
+            border-bottom: 1px dotted #000;
+            cursor: help;
+            text-decoration: none; 
+        }
+        abbr[title]::after {
+            content: " (" attr(title) ")"; 
+            font-size: 0.9em;
+            color: #555;
+        }
+       .centro{
+       float: right;
+       }
+       .derecha{
+        text-align:  right;
+       }
+    </style>
+</head>
+<body>
+    <h1>Proyecto de Ajedrez en Java</h1>
+    <p>Bienvenido a la página introductoria de mi proyecto de ajedrez, desarrollado en Java durante los últimos 4 meses.</p>
+    <h2>Descripción del Proyecto</h2>
+    <p>Este proyecto tiene como objetivo crear un <strong>juego de ajedrez</strong> completamente funcional. Durante el desarrollo, se han abordado varias áreas clave, incluyendo la lógica del juego, la interfaz gráfica y la base de datos.</p>
+    
+    <p class="kk">Asi es mi logica de todas las piezas en el ajedrez: if ((mF == 2 && mC == 1) || (mF == 1 && mC == 2))</p>
+    
+    <p>He aprendido mucho sobre programación en Java, especialmente sobre <abbr title="Interfaz de Usuario">IU</abbr> y sobre todo de matrices.</p>
+    
+    <blockquote>
+        "El ajedrez es un mar en el que un mosquito puede beber y un elefante puede bañarse." - Proverbio indio
+    </blockquote>
+    
+    <p>Definiciones importantes del ajedrez:</p>
+    <dl>
+        <dt>Jaque</dt>
+        <dd>Una amenaza directa al rey del oponente.</dd>
+        <dt>Jaque mate</dt>
+        <dd>Una posición en la que el rey del oponente está en jaque y no puede escapar.
+            <dl>
+                <dt>Ejemplo</dt>
+                <dd>El rey está en jaque y no tiene movimientos legales para escapar.</dd>
+                <dt>Consecuencia</dt>
+                <dd>El juego termina y el jugador que dio jaque mate gana (Emilio queria que en mi proyecto de java calculase todas las opciones posibles para que se acabe asi,lo que me hacia falta).</dd>
+            </dl>
+        </dd>
+        <dt>Tablero</dt>
+        <dd>El área de juego del ajedrez, compuesta por 64 casillas alternas de colores claros y oscuros.</dd>
+        <dt>Peón</dt>
+        <dd>La pieza de ajedrez más numerosa y de menor valor.
+            <dl>
+                <dt>Movimientos</dt>
+                <dd>El peón se mueve hacia adelante pero captura en diagonal.</dd>
+                <dt>Promoción</dt>
+                <dd>Si un peón llega al otro extremo del tablero, puede ser promovido a otra pieza, usualmente una reina.</dd>
+            </dl>
+        </dd>
+        <dt>Enroque</dt>
+        <dd>Una jugada especial en la que el rey y una de las torres se mueven simultáneamente.
+            <dl>
+                <dt>Enroque corto</dt>
+                <dd>El rey se mueve dos casillas hacia la torre y la torre se coloca al lado del rey.</dd>
+                <dt>Enroque largo</dt>
+                <dd>El rey se mueve dos casillas hacia la torre del otro lado y la torre se coloca al lado del rey.</dd>
+            </dl>
+        </dd>
+    </dl>
+    
+    <p>A continuación, algunos hitos del proyecto:</p>
+    <ul>
+        <li>Inicio del proyecto: Febrero 2024</li>
+        <li>Primera versión funcional: Abril 2024</li>
+        <li>Versión final del proyecto: Junio 2024</li>
+    </ul>
+    
+    <h2>Galería del Proyecto</h2>
+    <p>Aquí algunas imágenes del proyecto:</p>
+    <br>
+    <figure>
+        <img  src="imagen.PNG" width="700px" height="500px" alt="Tablero/Interfaz del Ajedrez"><br>
+        <figcaption>Tablero/Interfaz del Ajedrez</figcaption>
+    </figure>
+    <figure>
+        <br>
+        <img class="centro" src="imagen2.PNG" width="900px" height="500px" alt="Reglas para limitar el movimiento del peon">
+        <br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <figcaption class="derecha">Reglas para limitar el movimiento del peon</figcaption>
+    </figure>
+</body>
+</html>
